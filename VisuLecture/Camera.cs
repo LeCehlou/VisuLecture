@@ -8,15 +8,14 @@ public class Camera
     private int _width;
     private int _height;
     private int _bitrate;
-    private Byte[] _videoContent;
-    private int _deviceId;
+    private Byte[]? _videoContent;
+    public string? _deviceId {get; set;}
     private IJSRuntime _jsRuntime;
 
-    public Camera(int deviceId, IJSRuntime jsRuntime)
+    public Camera(string deviceId, IJSRuntime jsRuntime)
     {
         this._deviceId = deviceId;
         this._jsRuntime = jsRuntime;
-            
         //TODO: récupération des infos caméra
     }
     

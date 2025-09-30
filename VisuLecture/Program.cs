@@ -1,4 +1,5 @@
 using Radzen;
+using VisuLecture;
 using VisuLecture.Components;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,10 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
 builder.Services.AddRadzenComponents();
+
+//Permet d'accéder à AppState dans toute l'application grâce à une injection
+//avec @inject AppState AppState
+builder.Services.AddScoped<AppState>();
 
 var app = builder.Build();
 

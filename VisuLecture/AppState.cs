@@ -7,16 +7,18 @@ public class AppState
 {
     private AppConfiguration _config = new AppConfiguration();
 
-    private Camera _camera;
+    public Camera? Camera { get; set; }
     //TODO: ajouter constante
     private string _processingServerURI = "localhost:3000";
-    private IJSRuntime JsRuntime { get; }
+    public IJSRuntime JsRuntime { get; }
+    private bool _initialized;
+
 
     public AppState(IJSRuntime jsRuntime)
     {
         JsRuntime = jsRuntime;
     }
-    
+
     public void CheckConnection()
     {
         //TODO: vérifie si le serveur de traitement est bien joignable
