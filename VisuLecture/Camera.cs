@@ -1,3 +1,5 @@
+using Microsoft.JSInterop;
+
 namespace VisuLecture.Components;
 
 public class Camera
@@ -7,6 +9,16 @@ public class Camera
     private int _height;
     private int _bitrate;
     private Byte[] _videoContent;
+    private int _deviceId;
+    private IJSRuntime _jsRuntime;
+
+    public Camera(int deviceId, IJSRuntime jsRuntime)
+    {
+        this._deviceId = deviceId;
+        this._jsRuntime = jsRuntime;
+            
+        //TODO: récupération des infos caméra
+    }
     
     public void Calibrate()
     {
@@ -38,4 +50,5 @@ public class Camera
         //TODO: Prends un screenshot et renvoie la valeur
         return;
     }
+    
 }
